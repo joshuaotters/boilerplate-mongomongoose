@@ -3,8 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 //connect to remote db instance::mongodb atlas
-//mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 let Person;
