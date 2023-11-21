@@ -19,10 +19,14 @@ const personSchema = new mongoose.Schema({
 const Person = mongoose.model("Person", personSchema);
 
 
-const createAndSavePerson = async ({done}) => {
-  //done(null /*, data*/);
+const createAndSavePerson = ({done}) => {
+  //Creating student document
   let student = new Person({name: "Joshua", age: 23, favoriteFoods: ['posho', 'rice', 'matooke']})
-  await doc.save();
+  //Saving document to database
+  student.save(function(err, dat){
+    if(err) return console.error(err);
+    done(null, data)
+  });
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
