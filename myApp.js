@@ -37,7 +37,7 @@ const createManyPeople = (arrayOfPeople, done) => {
   ]
   arrayOfPeople.save((err, data) => {
     if(err) console.error(err);
-    done(null /*, data*/);
+    done(null, data);
   });
 };
 
