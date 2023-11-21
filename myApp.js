@@ -5,7 +5,19 @@ const mongoose = require('mongoose');
 //connect to remote db instance::mongodb atlas
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-let Person;
+//Creating the Person model
+//let Person;
+const personSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    require: true
+  },
+  age: Number,
+  favoriteFoods: String
+
+});
+const Person = new mongoose.model("Person", personSchema);
+
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
@@ -55,16 +67,6 @@ const queryChain = (done) => {
   done(null /*, data*/);
 };
 
-const personSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    require: true
-  },
-  age: Number,
-  favoriteFoods: String
-
-});
-module.exports = new mongoose.model("Person", personSchema);
 
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
