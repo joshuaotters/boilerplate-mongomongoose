@@ -23,7 +23,7 @@ const createAndSavePerson = (done) => {
   //Creating student document
   let student = new Person({name: "Joshua", age: 23, favoriteFoods: ['posho', 'rice', 'matooke']})
   //Saving document to database
-  student.save(function(err, dat){
+  student.save(function(err, data){
     if(err) return console.error(err);
     done(null, data)
   });
