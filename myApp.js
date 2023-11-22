@@ -90,7 +90,7 @@ const findAndUpdate = (personName, done) => {
 };
 
 const removeById = (personId, done) => {
-  Person.findByIdAndDelete(_id, (err, deletedDoc) => {
+  Person.findByIdAndDelete(personId, (err, deletedDoc) => {
     if(err) console.log(err);
       done(null, deletedDoc);
   })
